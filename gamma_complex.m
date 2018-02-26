@@ -15,6 +15,7 @@ function y = gamma_complex(z)
     y_with_z_smaller_1 = pi ./ sin(pi .* z_smaller_1) ...
             ./ gamma_complex_0(1 - z_smaller_1);
     
+    % When z ~ 1, use Taylor Expansion at 1.0
     y_with_z_smaller_1_near_1 = gamma_complex_near_1(z_smaller_1_near_1);
     
     % Combine three part and return
@@ -31,7 +32,7 @@ function y = gamma_complex_0(z)
             (1/exp(1) .* (z + 1./ (12.*z - 1/10./z) ) ) .^ z;
 end
 
-% The Gamma function for abs(z) ~ 1
+% The Gamma function for abs(z-1) ~ 0
 % The Taylor expansion of Gamma(x=1)
 % const_2 = (6*eulergamma^2+pi^2)/12 = 0.9890 ...
 function y = gamma_complex_near_1(z)

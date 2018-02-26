@@ -6,5 +6,4 @@ A very fast function to estimate the Gamma function with complex variable
 
 @see https://en.wikipedia.org/wiki/Stirling%27s_approximation
 
-![Arg Gamma(z)](https://i.imgur.com/V41C1Rv.png)
-![Abs Gamma(z)](https://i.imgur.com/FIYG1UB.png)
+![Gamma(z)](https://i.imgur.com/dmlv2Fj.png)

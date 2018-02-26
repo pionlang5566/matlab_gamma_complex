@@ -25,3 +25,23 @@ function y = gamma_complex_0(z)
             (1/exp(1) .* (z + 1./ (12.*z - 1/10./z) ) ) .^ z;
 end
 
+% for test
+function gamma_test()
+    z_r = linspace(-6, 4, 601);
+    z_i = linspace(-5, 5, 601);
+    [Z_real, Z_imag] = meshgrid(z_r, z_i);
+    
+    Z = complex(Z_real, Z_imag);
+    W_gamma = gamma_complex( Z);
+    
+    W_ang = angle(W_gamma);
+    W_abs = abs(W_gamma);
+    
+    figure('Position', [40 40, 500, 500]);
+    imagesc([-6, 4], [-5, 5], W_ang);
+    colormap(hsv(256));
+    
+    figure('Position', [40 40, 500, 500]);
+    imagesc([-6, 4], [-5, 5], log(W_abs), [-3, 5]);
+    colormap(parula(256));
+end
